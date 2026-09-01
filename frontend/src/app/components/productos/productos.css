@@ -1,0 +1,199 @@
+.pagina {
+  --primary: #3b82f6;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --bg-hover: #f8fafc;
+  --border: #e2e8f0;
+  --radius: 8px;
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.pagina .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.pagina .header-info h1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 0.25rem 0;
+  letter-spacing: -0.025em;
+}
+
+.pagina .header-info h1 mat-icon {
+  color: var(--primary);
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.pagina .header-info p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.pagina .btn-nuevo {
+  border-radius: var(--radius);
+  padding: 0 1.25rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.pagina .btn-nuevo:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.pagina .btn-nuevo:active {
+  transform: translateY(0);
+}
+
+.pagina .tabla-card {
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05),
+              0 1px 2px -1px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.pagina .tabla-card mat-card-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background-color: #ffffff;
+}
+
+.pagina .tabla-card mat-card-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.pagina .tabla-card mat-card-title mat-icon {
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.pagina .tabla-card mat-card-content {
+  padding: 0 !important;
+}
+
+.pagina .tabla-wrapper {
+  overflow-x: auto;
+}
+
+.pagina .tabla-material {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.pagina .tabla-material th {
+  background-color: #f8fafc;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.pagina .tabla-material td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.pagina .tabla-material tbody tr {
+  transition: var(--transition);
+}
+
+.pagina .tabla-material tbody tr:hover {
+  background-color: var(--bg-hover);
+}
+
+.pagina .tabla-material tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pagina .badge-id {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.pagina .producto-cell {
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.pagina .td-precio {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+}
+
+.pagina .sin-datos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.pagina .sin-datos mat-icon {
+  font-size: 3.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+}
+
+.pagina .sin-datos h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 0.5rem 0;
+}
+
+.pagina .sin-datos p {
+  color: var(--text-muted);
+  margin: 0 0 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.pagina .sin-datos button {
+  border-radius: var(--radius);
+}
+
+@media (max-width: 600px) {
+  .pagina .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

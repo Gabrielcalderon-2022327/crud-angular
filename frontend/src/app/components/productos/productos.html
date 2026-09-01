@@ -1,0 +1,73 @@
+<div class="pagina">
+  <header class="header">
+    <div class="header-info">
+      <h1>
+        <mat-icon>storefront</mat-icon>
+        Inventario de Productos
+      </h1>
+      <p>Gestiona tu catálogo de productos de forma fácil y rápida</p>
+    </div>
+
+    <button mat-flat-button color="primary" class="btn-nuevo" (click)="abrirDialogo()">
+      <mat-icon>add</mat-icon>
+      Nuevo Producto
+    </button>
+  </header>
+
+  <mat-card class="tabla-card">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>list_alt</mat-icon>
+        Lista de Productos
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="tabla-wrapper">
+        <table class="tabla-material">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @for (p of productos(); track p.id) {
+              <tr>
+                <td>
+                  <span class="badge-id">#{{ p.id }}</span>
+                </td>
+                <td class="td-producto">
+                  <div class="producto-cell">
+                    <span>{{ p.producto }}</span>
+                  </div>
+                </td>
+
+                <td class="td-precio">Q.{{ p.precio | number: '1.2-2' }}</td>
+
+                <td>{{ p.cantidad }}</td>
+              </tr>
+            } @empty {
+              <tr>
+                <td colspan="6">
+                  <div class="sin-datos">
+                    <mat-icon>inbox</mat-icon>
+                    <h3>No hay productos registrados</h3>
+                    <p>Comienza agregando tu primer producto</p>
+                    <button mat-flat-button color="primary" (click)="abrirDialogo()">
+                      <mat-icon>add</mat-icon>
+                      Agregar Producto
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
